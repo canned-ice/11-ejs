@@ -32,6 +32,6 @@ app.get('/books', (request, response) => {
   client.query(SQL)
   .then( data => {
     let booklist = data.rows;
-    response.render('index', {items: booklist});
+    response.render('index', {items: booklist})
   })
 });
