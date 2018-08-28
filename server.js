@@ -1,5 +1,7 @@
 'use strict';
 
+// TODO: Make sure to do a 'DROP if exists' for database
+
 const pg = require('pg');
 const express = require('express');
 const PORT = process.env.PORT || 3000;
