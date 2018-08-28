@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/canned-ice/book-list/issues"
   },
-  "homepage": "https://github.com/canned-ice/book-list#readme"
+  "homepage": "https://github.com/canned-ice/book-list#readme",
+  "dependencies": {
+    "pg": "^7.4.3"
+  }
 }
