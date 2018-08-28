@@ -1,0 +1,20 @@
+{
+  "name": "book-app",
+  "version": "1.0.0",
+  "description": "Code Fellows Code 301 Week 3 Project - App that serves book info downloaded from the Google Books api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canned-ice/book-list.git"
+  },
+  "author": "'Vince Masten' 'Brai Frauen' 'Candice Thomas'",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/canned-ice/book-list/issues"
+  },
+  "homepage": "https://github.com/canned-ice/book-list#readme"
+}
