@@ -7,3 +7,40 @@ h1 {
   font-size: 40pt;
   color: rgb(250, 190, 40);
 }
+h2 {
+  color: rgb(250, 190, 40);
+  font-weight: bold;
+  font-size: 20pt;
+}
+header {
+  float: none;
+  padding: 0 0 .2em 1em;
+}
+nav {
+  padding: 0.2em;
+}
+nav ul {
+  display: block;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+nav ul li {
+  display: inline;
+  border-bottom: none;
+}
+
+nav:hover ul {
+  display: block;
+}
+
+nav ul li:hover a {
+  color: gray;
+}
+
+nav li {
+  margin-right: .4em;
+  font-size: 1.5em;
+  padding: .5em .2em;
+  border-bottom: 1px solid #ccc;
+}
