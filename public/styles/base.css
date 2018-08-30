@@ -1,9 +1,26 @@
 * {
   background-color: rgb(0, 193, 118);
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40pt;
-  color: rgb(250, 190, 40);
+@media only screen and (min-width: 768px) {
+  
+  nav ul {
+    display: block;
+    float: right;
+  }
+
+  nav ul li {
+    padding-right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: rgb(0, 193, 118);
+    color: #fff;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
 }
