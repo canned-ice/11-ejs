@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books by VM/BF/CT</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ONE SINGLE BOOK</h1>
+      <h2>Several books recommended by Vince, Brai, and Candice</h2> 
+    </header>
+    <main>
+      <h3>Ze Books!</h3>
+      <ul>
+
+        <% items.forEach( item => { %>
+
+          <li><%= item.title %></li>
+          <p><%= item.author %></p>
+          <a href="pages/<%= item.title %>"><img src="<%= item.image_url %>"></a>
+        <% }); %>
+
+      </ul>
+    </main>
+    <footer></footer>
+  </body>
+</html>
