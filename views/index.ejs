@@ -21,18 +21,28 @@
         </ul>
       </nav>
     </header>
-    <main class=site-wrap>
+    <main class="site-wrap">
       <h2 class="clearfix">Saved Books</h2> 
-      <ul>
+      <ul class="content-wrap">
         <% items.forEach( item => { %>
-
-          <li><%= item.title %></li>
-          <p><%= item.author %></p>
-          <img src="<%= item.image_url %>">
+          <li class="card-column">
+            <div class="card-content">
+              <img src="<%= item.image_url %>">
+              <h3><%= item.title %></h3>
+              <p><%= item.author %></p>
+              <span><a href="/book/<%= item.id %>">View Details</a></span>
+            </div>
+          </li>
+          <div></div>
         <% }); %>
       </ul>
+      <div class="bottom-menu">
+        <div class="bottom-menu-button"></div>
+        <div class="bottom-menu-button"></div>
+        <div class="bottom-menu-button"></div>
+        <div class="bottom-menu-button"></div>
+      </div>
     </main>
     <footer></footer>
-    <!-- <script src="app.js"></script> -->
   </body>
 </html>
