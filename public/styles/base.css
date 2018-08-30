@@ -1,6 +1,7 @@
 * {
   background-color: rgb(0, 193, 118);
   box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -10,42 +11,101 @@ h1 {
 }
 h2 {
   color: rgb(250, 190, 40);
-  font-weight: bold;
-  font-size: 20pt;
+  background-color: rgb(255, 0, 60);
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+  letter-spacing: 1px;
+  border-bottom: 0.5pt outset rgba(0, 0, 0, 0.19);
+  margin-bottom: 15px;
+}
+h3 {
+  margin-top: 15px;
+  color: rgb(250, 190, 40);
+  font-size: 1em;
+  background-color: rgb(138, 193, 0);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.345);
+}
+p {
+  margin-top: 5px;
+  color: rgb(79, 79, 79);
+  font-style: italic;
+  font-size: .7em;
+  background-color: rgb(138, 193, 0);
+}
+span {
+  display: block;
+  width: 122px;
+  height: 43px;
+  position: relative;
+  margin: 20px auto;
+}
+span > a {
+  background-color: black;
+  color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: .8em;
+  letter-spacing: 1px;
 }
 
 .site-wrap {
   width: 100%;
 }
 .content-wrap {
-  width: 300px;
+  width: 286px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 }
 .card-column {
   position: relative;
-  height: 400px;
+  height: 377px;
   width: 100%;
   display: block;
-  outline: 5px blue dotted;
 }
 .card-content {
-  height: 300px;
+  height: 345px;
+  width: 256px;
   display: block;
   position: absolute;
-  outline: 5px red dotted;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  margin: auto;
   text-align: center;
   background-color: rgb(138, 193, 0);
-
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .card-content > img {
   height: 195px;
   width: 128px;
-  margin: 25px auto;
+  margin: 20px auto 8px auto;
   display: block;
+  border-radius: 1px;
+  border: 2px solid whitesmoke;
+}
+.bottom-menu {
+  height: 50px;
+  background-color: black;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+}
+.bottom-menu-button {
+  width: 4%;
+  height: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 15px 10%;
 }
