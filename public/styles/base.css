@@ -54,6 +54,7 @@ span > a {
   border-radius: 5px;
   font-size: .8em;
   letter-spacing: 1px;
+  font-weight: lighter;
 }
 
 .site-wrap {
