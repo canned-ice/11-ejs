@@ -46,7 +46,10 @@ function showBook( request, response ) {
   .then( data =>{
     response.render('book', {item:data.rows[0]})
   })
-  
+  .catch(err => {
+    console.error(err);
+    response.render('error');
+  })
 };
 
 // function detailBook( request, response ) {

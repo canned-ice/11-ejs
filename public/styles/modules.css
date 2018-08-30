@@ -1,0 +1,76 @@
+nav .icon-menu {
+  margin-right: 0.5em;
+  width: 45px;
+  height: 45px;
+  float: right;
+  position: relative;
+}
+.icon-menu {
+  height: 45px;
+  width: 45px;
+  font-size: 3em;
+}
+nav input[type=checkbox] {
+  display: none;
+}
+nav input[type=checkbox]:checked ~ .menu, ul {
+  display: block;
+  width: 100%;
+  background-color: #FF003C;
+}
+.site-wrap {
+  width: 100%;
+}
+.content-wrap {
+  width: 286px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.card-column {
+  position: relative;
+  height: 377px;
+  width: 100%;
+}
+.clearfix {
+  clear: both;
+}
+.card-content {
+  height: 345px;
+  width: 256px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  background-color: rgb(138, 193, 0);
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.book {
+  height: 195px;
+  width: 128px;
+  margin: 20px auto 8px auto;
+  display: block;
+  border-radius: 1px;
+  border: 2px solid whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.bottom-menu {
+  height: 50px;
+  background-color: black;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+}
+.bottom-menu-button {
+  width: 4%;
+  height: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 15px 10%;
+}

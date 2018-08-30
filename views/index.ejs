@@ -4,8 +4,9 @@
     <title>Books by VM/BF/CT</title>
     <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/icons.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/modules.css" />
   </head>
   <body>
     <header>
@@ -20,14 +21,14 @@
           <li class="tab"><a href="#">Search by Title or Author</a></li>
         </ul>
       </nav>
+      <h2 class="clearfix">Saved Books</h2>
     </header>
     <main class="site-wrap">
-      <h2 class="clearfix">Saved Books</h2> 
       <ul class="content-wrap">
         <% items.forEach( item => { %>
           <li class="card-column">
             <div class="card-content">
-              <img src="<%= item.image_url %>">
+              <img class="book" src="<%= item.image_url %>">
               <h3><%= item.title %></h3>
               <p><%= item.author %></p>
               <span><a href="/book/<%= item.id %>">View Details</a></span>
