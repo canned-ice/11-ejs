@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books by VM/BF/CT</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Our Curated List of Books</h1>
+      <h2>Several books recommended by Vince, Brai, and Candice</h2> 
+    </header>
+    <main>
+      <h3>Ze Books!</h3>
+      <h2>Add Book <em><%= booklist %></em></h2>
+      <form method="POST" action="new">
+  
+        <div>
+            <label for= "title">Title</label>
+            <input type="text" name="title" placeholder="" />
+        </div>
+        <div>
+            <label for = "author">Author</label>
+            <input type="text" name="author" placeholder="" />
+       </div>
+       <div>
+           <label for="image_url">Image URL</label>
+       </div>
+       <div>
+            <label for="description">Description</label>
+            <input type="text" name="description" placeholder="" />
+        </div>
+       
+        <input type="submit" value="submit" class="button"> 
+  
+      </form>
+    </main>
+    <footer></footer>   
+    
+  </body>
+</html>

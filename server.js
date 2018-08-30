@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 app.set('view engine', 'ejs');
 
-console.log("P" ,PORT);
+console.log('I am on line 12');
 
 
 const constring = process.env.DATABASE_URL || 'postgres://ashabraifrauen:troy12@localhost:5432/books_app';
@@ -21,14 +21,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/book/:id', showBook);
-
+app.get('/new/:id', addForm);
+app.post('/new',addBook);
+console.log('I am on line 26');
+//----------------------------------------//
 app.get('/', (request, response) => {
   let SQL = 'SELECT title, author, image_url, id FROM books';
+  console.log('I am on line 30');
   client.query(SQL)
   .then( data => {
     let booklist = data.rows;
     response.render('index', {items: booklist})
-    console.log('going thru .then');
+    console.log('going thru get.then');
   })
   .catch(err => {
     console.error(err);
@@ -49,15 +53,36 @@ function showBook( request, response ) {
   
 };
 
-// function detailBook( request, response ) {
-//   let data = {
-//     title: request.params.title,
-//     items: request.params.items   
-//   };
-//   response.render('book', data);
-// }
+function addForm ( request, response ) {
+  let data = {
+    item: request.params.item,
+    id:request.params.id
+  }
+  response.render('new', data);
+};
 
-// function 
+function addBook( request, response ){
+  let SQL = `INSERT INTO books (title, author, image_url, description, id) VALUES($1, $2, $3, $4, $5)`;
+
+  let values = [
+    request.body.title,
+    request.body.author,
+    request.body.image_url,
+    request.body.description,
+    request.body.id
+  ];
+
+  client.query(SQL, values)
+    .then(()=>{
+      respond.render('index',{
+        items: [{title: request.body.title,
+              author: request.body.author,
+              image_url: request.body.image_url,
+              description: request.body.description
+        }]
+      })
+    });
 
 app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}!`));
-app.use('*', (req, res) => res.render('error') );
+app.use('*', (req, res) => res.render('error') )
+};
