@@ -1,5 +1,6 @@
 * {
   background-color: rgb(0, 193, 118);
+  box-sizing: border-box;
 }
 
 h1 {
@@ -12,9 +13,6 @@ h2 {
   font-weight: bold;
   font-size: 20pt;
 }
-h3 {
-  color: rgb(255, 0, 60);
-}
 
 .site-wrap {
   width: 100%;
@@ -24,10 +22,8 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  outline: 5px yellow dashed;
 }
-.book-card {
-  background-color: rgb(138, 193, 0);
+.card-column {
   position: relative;
   height: 400px;
   width: 100%;
@@ -35,18 +31,21 @@ h3 {
   outline: 5px blue dotted;
 }
 .card-content {
-  width: 150px;
   height: 300px;
   display: block;
   position: absolute;
   outline: 5px red dotted;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: rgb(138, 193, 0);
+
 }
 .card-content > img {
-  margin: 40px auto;
-}
-.card-content > h3 {
-  outline: 2px pink dashed;
-}
-.card-content > p {
-  outline: 2px orange dashed;
+  height: 195px;
+  width: 128px;
+  margin: 25px auto;
+  display: block;
 }
