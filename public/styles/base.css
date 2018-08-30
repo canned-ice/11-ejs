@@ -12,35 +12,41 @@ h2 {
   font-weight: bold;
   font-size: 20pt;
 }
-header {
-  float: none;
-  padding: 0 0 .2em 1em;
+h3 {
+  color: rgb(255, 0, 60);
 }
-nav {
-  padding: 0.2em;
+
+.site-wrap {
+  width: 100%;
 }
-nav ul {
+.content-wrap {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  outline: 5px yellow dashed;
+}
+.book-card {
+  background-color: rgb(138, 193, 0);
+  position: relative;
+  height: 400px;
+  width: 100%;
   display: block;
-  padding: 0;
-  list-style: none;
-  clear: both;
+  outline: 5px blue dotted;
 }
-nav ul li {
-  display: inline;
-  border-bottom: none;
-}
-
-nav:hover ul {
+.card-content {
+  width: 150px;
+  height: 300px;
   display: block;
+  position: absolute;
+  outline: 5px red dotted;
 }
-
-nav ul li:hover a {
-  color: gray;
+.card-content > img {
+  margin: 40px auto;
 }
-
-nav li {
-  margin-right: .4em;
-  font-size: 1.5em;
-  padding: .5em .2em;
-  border-bottom: 1px solid #ccc;
+.card-content > h3 {
+  outline: 2px pink dashed;
+}
+.card-content > p {
+  outline: 2px orange dashed;
 }

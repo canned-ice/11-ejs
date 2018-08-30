@@ -17,14 +17,18 @@
         </ul>
       </nav>
     </header>
-    <main class=site-wrap>
+    <main class="site-wrap">
       <h2>Saved Books</h2> 
-      <ul>
+      <ul class="content-wrap">
         <% items.forEach( item => { %>
-
-          <li><%= item.title %></li>
-          <p><%= item.author %></p>
-          <img src="<%= item.image_url %>">
+          <li class="book-card">
+            <div class="card-content">
+              <img src="<%= item.image_url %>">
+              <h3><%= item.title %></h3>
+              <p><%= item.author %></p>
+            </div>
+          </li>
+          <div></div>
         <% }); %>
       </ul>
     </main>
