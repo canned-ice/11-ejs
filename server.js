@@ -5,12 +5,14 @@
 require('dotenv').config();
 const pg = require('pg');
 const express = require('express');
-const PORT = process.env.PORT;
-
+const PORT = process.env.PORT || 8080; 
 const app = express();
 app.set('view engine', 'ejs');
 
-const constring = process.env.DATABASE_URL;
+console.log("P" ,PORT);
+
+
+const constring = process.env.DATABASE_URL || 'postgres://ashabraifrauen:troy12@localhost:5432/books_app';
 const client = new pg.Client(constring);
 
 client.connect();
@@ -18,8 +20,10 @@ client.on('error', err => console.error(err));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
+app.get('/book/:id', showBook);
+
 app.get('/', (request, response) => {
-  let SQL = 'SELECT title, author, image_url FROM books';
+  let SQL = 'SELECT title, author, image_url, id FROM books';
   client.query(SQL)
   .then( data => {
     let booklist = data.rows;
@@ -31,6 +35,29 @@ app.get('/', (request, response) => {
     response.render('error');
   })
 });
+
+function showBook( request, response ) {
+  let SQL =`SELECT * FROM books WHERE id=$1`;
+  let id = request.params.id;
+  
+  let values = [id];
+
+  client.query(SQL, values)
+  .then( data =>{
+    response.render('book', {item:data.rows[0]})
+  })
+  
+};
+
+// function detailBook( request, response ) {
+//   let data = {
+//     title: request.params.title,
+//     items: request.params.items   
+//   };
+//   response.render('book', data);
+// }
+
+// function 
 
 app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}!`));
 app.use('*', (req, res) => res.render('error') );
