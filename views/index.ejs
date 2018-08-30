@@ -3,29 +3,42 @@
   <head>
     <title>Books by VM/BF/CT</title>
     <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
   </head>
   <body>
     <header>
-      <h1>Our Curated List of Books</h1>
-      <h2>Several books recommended by Vince, Brai, and Candice</h2> 
+      <h1>Best Books!</h1>
+      <nav>
+        <i class="fas fa-bars"></i>
+        <ul>
+          <li class="tab"><a href="#">Add a New Book</a></li>
+          <li class="tab"><a href="#">Search by Title or Author</a></li>
+        </ul>
+      </nav>
     </header>
-    <main>
-      <p><a href ="/new/<%  %>">Click here to add a book</a></p>
-      <h3>Ze Books!</h3>
-      <ul>
-
+    <main class="site-wrap">
+      <h2>Saved Books</h2> 
+      <ul class="content-wrap">
         <% items.forEach( item => { %>
-
-          <li><%= item.title %></li>
-          <p><%= item.author %></p>
-          <img src="<%= item.image_url %>">
-          <p><a href="/book/<%= item.id %>">Click here</a></p>
+          <li class="card-column">
+            <div class="card-content">
+              <img src="<%= item.image_url %>">
+              <h3><%= item.title %></h3>
+              <p><%= item.author %></p>
+              <span><a href="/book/<%= item.id %>">View Details</a></span>
+            </div>
+          </li>
+          <div></div>
         <% }); %>
-
       </ul>
+      <div class="bottom-menu">
+        <div class="bottom-menu-button"></div>
+        <div class="bottom-menu-button"></div>
+        <div class="bottom-menu-button"></div>
+        <div class="bottom-menu-button"></div>
+      </div>
     </main>
     <footer></footer>
-    
   </body>
 </html>
