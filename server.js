@@ -20,7 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/book/:id', showBook);
-app.get('/new/:id', addForm);
+app.get('/new', (request, response) => {
+  response.render('new');
+});
 app.post('/new',addBook);
 console.log('I am on line 26');
 //----------------------------------------//
@@ -51,13 +53,14 @@ function showBook( request, response ) {
   })
 };
 
-function addForm ( request, response ) {
-  let data = {
-    item: request.params.item,
-    id:request.params.id
-  }
-  response.render('new', data);
-};
+// function addForm ( request, response ) {
+//   let data = {
+//     book: request.params.book,
+//     id:request.params.id
+//   };
+//   console.log(request.params);
+//   response.render('new', data);
+// };
 
 function addBook( request, response ){
   let SQL = `INSERT INTO books (title, author, image_url, description, id) VALUES($1, $2, $3, $4, $5)`;
@@ -72,14 +75,14 @@ function addBook( request, response ){
 
   client.query(SQL, values)
     .then(()=>{
-      respond.render('index',{
+      respond.render('add',{
         items: [{title: request.body.title,
               author: request.body.author,
               image_url: request.body.image_url,
               description: request.body.description
         }]
       })
-    });
+    })
 }
 
 app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}!`));
