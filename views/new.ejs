@@ -13,27 +13,27 @@
     <main>
       <h3>Ze Books!</h3>
       <h2>Add Book</h2>
-      <form method="POST" action="/add">
+      <form method="POST" action="/new/submit">
   
         <div>
-            <label for= "title">Title</label>
-            <input type="text" name="title" placeholder="" />
+          <label for= "title">Title</label>
+          <input type="text" name="title" placeholder="" required />
         </div>
         <div>
-            <label for = "author">Author</label>
-            <input type="text" name="author" placeholder="" />
-       </div>
-       <div>
-           <label for="image_url">Image URL</label>
-           <input type="url" name="image_url" placeholder="png/jpg/gif" />
-       </div>
-       <div>
-         <label for="isbn">ISBN</label>
-         <input type="text" name="isbn" placeholder="" />
-       </div>
-       <div>
-            <label for="description">Description</label>
-            <input type="text" name="description" placeholder="" />
+          <label for = "author">Author</label>
+          <input type="text" name="author" placeholder="" required />
+        </div>
+        <div>
+          <label for="image_url">Image URL</label>
+          <input type="url" name="image_url" placeholder="png/jpg/gif" required />
+        </div>
+        <div>
+          <label for="isbn">ISBN</label>
+          <input type="text" name="isbn" placeholder="" required />
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <input type="text" name="description" placeholder="" required />
         </div>
        
         <input type="submit" value="submit" class="button"> 
