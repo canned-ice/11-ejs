@@ -11,7 +11,6 @@ app.set('view engine', 'ejs');
 
 console.log('I am on line 12');
 
-
 const constring = process.env.DATABASE_URL || 'postgres://ashabraifrauen:troy12@localhost:5432/books_app';
 const client = new pg.Client(constring);
 
@@ -26,8 +25,8 @@ app.post('/new',addBook);
 console.log('I am on line 26');
 //----------------------------------------//
 app.get('/', (request, response) => {
-  let SQL = 'SELECT title, author, image_url, id FROM books';
-  console.log('I am on line 30');
+  let SQL = 'SELECT title, author, image_url, id FROM books'
+  console.log('I am on line 30')
   client.query(SQL)
   .then( data => {
     let booklist = data.rows;
@@ -50,7 +49,6 @@ function showBook( request, response ) {
   .then( data =>{
     response.render('book', {item:data.rows[0]})
   })
-  
 };
 
 function addForm ( request, response ) {
@@ -82,7 +80,7 @@ function addBook( request, response ){
         }]
       })
     });
+}
 
 app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}!`));
-app.use('*', (req, res) => res.render('error') )
-};
+app.use('*', (req, res) => res.render('error') );
