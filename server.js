@@ -69,13 +69,9 @@ function addBook( request, response ){
   ];
   client.query(SQL, values)
     .then( () => {
+      let newBookData = [];
+      newBookData.push(request.body);
       response.render('add', {
-        items: [{title: request.body.title,
-              author: request.body.author,
-              image_url: request.body.image_url,
-              description: request.body.description,
-              isbn: request.body.isbn
-        }]
-      });
+        item: newBookData});
     });
 }
