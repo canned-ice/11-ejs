@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books by VM/BF/CT</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/icons.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/modules.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/form.css" />
+  </head>
+  </head>
+  <body>
+    <header>
+    
+    </header>
+    <main class="site-wrap">
+        <h1>Add Book</h1>
+        <nav>
+            <input id="burger" type="checkbox"/>
+            <div class="icon-menu">
+              <label for="burger">
+              </nav>
+
+     
+      <div class="content-wrap">
+        <div class="card-column">
+          <form method="POST" action="/new/submit" class="card-content">
+  
+        <div class="title-box">
+          <label for= "title">Title</label>
+          <input type="text" name="title" placeholder="" required class="title" />
+        </div>
+        <div class="author-box">
+          <label for = "author">Author</label>
+          <input type="text" name="author" placeholder="" required class="author" />
+        </div>
+        <div class="image-box">
+          <label for="image_url">Image URL</label>
+          <input type="url" name="image_url" placeholder="png/jpg/gif" required class="image" />
+        </div>
+        <div class="isbn-box">
+          <label for="isbn">ISBN</label>
+          <input type="text" name="isbn" placeholder="" required  class="isbn"/>
+        </div>
+        <div class="description-box">
+          <label for="description">Description</label>
+          <input type="text" name="description" placeholder="" required class="description"/>
+        </div>
+       
+        <span><input type="SUBMIT" value="submit" class="button"></span>
+  
+      </form>
+      </div>
+      </div>
+    </main>
+    <footer></footer>   
+    
+  </body>
+</html>

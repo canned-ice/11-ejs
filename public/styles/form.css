@@ -1,0 +1,82 @@
+
+h1{
+    text-align: center;
+}
+
+.form-box{
+    background-color: rgb(138, 193, 0) !important;
+    height: 800px;
+  
+}
+.card-content{
+    margin-top:100px;
+    color: rgb(250, 190, 40);
+    background-color: #26bdbd !important;
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+
+.title {
+    background:white;
+    width: 400px;
+    color: black;
+    margin-top: 10px;
+    font-family: Helvetica;
+   
+    
+    
+   
+}
+.author{
+    background:white;
+    width: 400px;
+    color: black;
+    margin-top: 10px;
+    font-family: Helvetica;
+  
+}
+.image{
+    background:white;
+    width: 400px;
+    color: black;
+    margin-top: 10px;
+    font-family: Helvetica;
+   
+}
+.isbn{
+    background:white;
+    width: 400px;
+    color: black;
+    margin-top: 10px;
+    font-family: Helvetica;
+}
+.description{
+    background:white;
+    width: 400px;
+    height: 150px;
+    color: black;
+    margin-top: 10px;
+    font-family:  Helvetica;
+   
+}
+.button{
+    margin-top: 10px;
+    width: 110px;
+    background-color: black;
+    color: white;
+     display: block;
+     /* position: absolute; */
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding-top: 3px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: .9em;
+        letter-spacing: 1px;
+        font-weight: lighter;
+      
+}
+
+

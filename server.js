@@ -1,50 +1,39 @@
 'use strict';
 
-// TODO: Make sure to do a 'DROP if exists' for database
-
 require('dotenv').config();
 const pg = require('pg');
 const express = require('express');
 const PORT = process.env.PORT || 8080; 
 const app = express();
-app.set('view engine', 'ejs');
-
-console.log("P" ,PORT);
-
-
-const constring = process.env.DATABASE_URL || 'postgres://ashabraifrauen:troy12@localhost:5432/books_app';
+const constring = process.env.DATABASE_URL || 'postgres://localhost:5432/books_app';
 const client = new pg.Client(constring);
 
 client.connect();
 client.on('error', err => console.error(err));
+
+app.set('view engine', 'ejs');
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
+app.get('/', showHome);
 app.get('/book/:id', showBook);
+app.get('/new', showForm);
 
-app.get('/', (request, response) => {
-  let SQL = 'SELECT title, author, image_url, id FROM books';
+app.post('/new/submit', addBook);
+
+app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}!`));
+app.use('*', (req, res) => res.render('error') );
+
+
+// Show the Home index page upon visit of the site
+function showHome(request, response) {
+  let SQL = 'SELECT title, author, image_url, id FROM books'
   client.query(SQL)
   .then( data => {
     let booklist = data.rows;
     response.render('index', {items: booklist})
-    console.log('going thru .then');
-  })
-  .catch(err => {
-    console.error(err);
-    response.render('error');
-  })
-});
-
-function showBook( request, response ) {
-  let SQL =`SELECT * FROM books WHERE id=$1`;
-  let id = request.params.id;
-  
-  let values = [id];
-
-  client.query(SQL, values)
-  .then( data =>{
-    response.render('book', {item:data.rows[0]})
+    console.log('going thru get.then');
   })
   .catch(err => {
     console.error(err);
@@ -52,15 +41,41 @@ function showBook( request, response ) {
   })
 };
 
-// function detailBook( request, response ) {
-//   let data = {
-//     title: request.params.title,
-//     items: request.params.items   
-//   };
-//   response.render('book', data);
-// }
+// Show a single book's details after clicking link from index
+function showBook( request, response ) {
+  let SQL =`SELECT * FROM books WHERE id=$1`;
+  let id = request.params.id;
+  let values = [id];
+  client.query(SQL, values)
+  .then( data =>{
+    response.render('book', {item:data.rows[0]})
+  })
+};
 
-// function 
+// Show the add-book form
+function showForm( request, response ) {
+  response.render('new');
+};
 
-app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}!`));
-app.use('*', (req, res) => res.render('error') );
+// Add a book's details to database AFTER clicking submit from /new
+function addBook( request, response ){
+  let SQL = `INSERT INTO books (title, author, image_url, description, isbn) VALUES ($1, $2, $3, $4, $5)`;
+  let values = [
+    request.body.title,
+    request.body.author,
+    request.body.image_url,
+    request.body.description,
+    request.body.isbn
+  ];
+  client.query(SQL, values)
+    .then( () => {
+      response.render('add', {
+        items: [{title: request.body.title,
+              author: request.body.author,
+              image_url: request.body.image_url,
+              description: request.body.description,
+              isbn: request.body.isbn
+        }]
+      });
+    });
+}
